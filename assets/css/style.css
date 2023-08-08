@@ -1,0 +1,21 @@
+#single_student_btn img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border: 1px solid #241468;
+    border-radius: 15px;
+}
+#single_student_btn .single_information {
+    margin-top: 7%;
+}
+#single_student_btn .single_information span{
+    color: #241468 ;
+}
+#mark_edit_img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border: 1px solid slateblue;
+    border-radius: 10px;
+    display: block;
+}

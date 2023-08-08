@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <!-- bootstrap cdn link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Student Result Sheet</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+
+
+  <body>
+    
+     
+ <div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-11 my-5">
+            <div class="card shadow">
+                <div class="card-body shadow">
+                    <h3 class="text-center text-primary-emphasis">Students Information</h3>
+                    <button class="btn btn-primary" data-bs-target="#add_student_btn" data-bs-toggle="modal">Add Students</button>
+                    <a href="index.html" class="btn btn-info" style="color: rgb(1, 37, 69);font-weight: 500;">Search Result </a>
+                    <table class="table table-striped my-2"> 
+                        <thead class="table-dark">
+                          <tr align="center">
+                            <td>SL</td>
+                            <td>PHOTO</td>
+                            <td>NAME</td>
+                            <td>ROLLL</td>
+                            <td>REG</td>
+                            <td>TIME</td>
+                            <td>RESULT </td>
+                            <td>ACTION</td> 
+                          </tr>
+                        </thead>
+                        <tbody id="student_post_area">
+                          
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+ <!-- add students model -->
+ <div class="modal fade" id="add_student_btn">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Add new Student</h2>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div id="msg" style="margin: 0 10px;"></div>
+            <div class="modal-body">
+                <form action="" id="add_students_form">
+                    <div>
+                        <input type="text" name="name" placeholder="Name" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <input type="text" id="roll" name="roll" placeholder="Roll" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <input type="text" id="reg" name="reg" placeholder="reg" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <input type="text" name="photo" placeholder="Photo url" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <button class="btn btn-success" type="submit">Add New Std</button>
+                        <button class="btn btn-danger" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+ </div>
+
+
+
+
+  <!-- Edit students model -->
+  <div class="edit_student_modal">
+    <div class="modal fade" id="edit_student_btn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+      
+                <div class="modal-header">
+                    <h2>Update Student</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div id="msg" style="margin: 0 10px;"></div>
+                <div class="modal-body">
+                    <form action="" id="edit_form_student">
+
+                        <div id="edit_modal_form">
+                <!-- edit modal here  -->  
+
+                        </div>
+                    </form>
+                   
+
+                </div>
+                
+            </div>
+        </div>
+      </div>
+  </div>
+ 
+
+
+
+   <!-- Single students view model -->
+   <div class="single_student_modal">
+    <div class="modal fade" id="single_student_btn">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+      
+                <div class="modal-header">
+                    <h2>Student Details</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div id="msg" style="margin: 0 10px;"></div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="" alt="student photo" class="w-100">
+                          </div>
+                          <div class="col-md-6">
+                            <div class="card single_information p-2">
+                                <div class="name">
+                                    
+                                </div>
+                                <hr>
+                                <div class="roll">
+                                </div>
+                                <hr>
+                                <div class="reg">    
+                                </div>
+                             
+                            </div>
+                    </div>
+
+                  </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+  </div>
+   
+
+
+
+
+
+<!-- add mark modal  -->
+ <div class="modal fade" id="add_mark_modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Add Mark</h2>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div id="msg" style="margin: 0 10px;"></div>
+            <div class="modal-body">
+                <form action="" id="add_students_marks_form">
+                    <div>
+                        <input type="hidden" name="id" class="form-control">
+                    </div>
+                    <div>
+                        <label for="">Bangla</label>
+                        <input type="text" name="bangla" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <label for="">English</label>
+                        <input type="text" id="roll" name="english" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <label for="">Math</label>
+                        <input type="text" id="reg" name="math" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <label for="">Science</label>
+                        <input type="text" name="science" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <label for="">Social Science</label>
+                        <input type="text" name="social_science" class="form-control">
+                    </div>
+                    <div class="my-3">
+                        <label for="">Religion</label>
+                        <input type="text" name="religion" class="form-control">
+                    </div>
+
+                    <div class="my-3">
+                        <button class="btn btn-success" type="submit">Add Mark</button>
+                        <button class="btn btn-danger" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+ </div>
+
+
+
+
+<!-- edit mark modal  -->
+<div class="modal fade" id="show_mark_modal">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            
+            <div class="modal-header">
+                <div style="width:20%;">
+                    <img src="" alt="" id="mark_edit_img">
+                </div>
+                
+                <h4 id="edit_mark_student_headding" ></h4>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+           
+            <div id="msg" style="margin: 0 10px;"></div>
+            <div class="modal-body">
+                <form action="" id="edit_students_marks_form">
+                                       
+                </form>
+            </div>
+            
+        </div>
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- bootstrap js cdn link  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script src="./src/data.js"></script>
+    <script src="./src/functions.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>
+
+
+
