@@ -149,7 +149,7 @@ loader.style.display = "block"
         },1000);
         return
     } else{
-
+        searchAlert.innerHTML= "";
         let cgpa = resultCal(searchStudents.result.bangla, searchStudents.result.english, searchStudents.result.math, searchStudents.result.science, searchStudents.result.social_science, searchStudents.result.religion).toFixed(2);
 
 
